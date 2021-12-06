@@ -1,0 +1,12 @@
+[package]
+name = "advent2021"
+version = "0.1.0"
+authors = ["Mike Mueller <mike@subfocal.net>"]
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+argparse = "0.2.2"
+itertools = "0.10.3"
+lazy_static = "1.4.0"
+regex = "1.5.4"
