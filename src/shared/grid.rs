@@ -1,6 +1,7 @@
 // Cartesian grid structures and utilities.
 
 pub use super::infinite_grid::InfiniteGrid;
+use std::slice::Iter;
 
 #[derive(Clone,Copy,Debug,Eq,PartialEq)]
 pub enum Dir {
@@ -12,6 +13,16 @@ pub enum Dir {
 
 #[allow(dead_code)]
 impl Dir {
+    pub fn iter() -> Iter<'static, Dir> {
+        static DIRECTIONS: [Dir; 4] = [
+            Dir::Up,
+            Dir::Right,
+            Dir::Down,
+            Dir::Left,
+        ];
+        DIRECTIONS.iter()
+    }
+
     pub fn turn_right(&self) -> Dir {
         match self {
             &Dir::Up    => Dir::Right,
